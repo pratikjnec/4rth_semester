@@ -54,41 +54,41 @@ void copyArray(int original[], int copy[], int n) {
 }
 
 int main() {
-    int original[] = {12, 11, 13, 5, 6};
-    int n = sizeof(original) / sizeof(original[0]);
-    int* arr = malloc(n * sizeof(int));
+    int original[10000]; // Test with a larger array
+    for (int i = 0; i < 10000; i++)
+        original[i] = 10000 - i; // Fill with descending order elements
     
-    printf("Unsorted array:\n");
-    printArray(original, n);
-
+    int n = sizeof(original) / sizeof(original[0]);
+    int arr[n];
+    
     clock_t start, end;
 
     // Insertion Sort
     copyArray(original, arr, n);
     start = clock();
-    insertionSort(arr, n);
+    for (int i = 0; i < 10; i++)
+        insertionSort(arr, n);
     end = clock();
     printf("\nInsertion Sort:\n");
-    printArray(arr, n);
-    printf("Time Required: %lf seconds\n", (double)(end - start) / CLOCKS_PER_SEC);
+    printf("Time Required: %lf seconds\n", (double)(end - start) / CLOCKS_PER_SEC / 10); // Average time
 
     // Bubble Sort
     copyArray(original, arr, n);
     start = clock();
-    bubbleSort(arr, n);
+    for (int i = 0; i < 10; i++) 
+        bubbleSort(arr, n);
     end = clock();
     printf("\nBubble Sort:\n");
-    printArray(arr, n);
-    printf("Time Required: %lf seconds\n", (double)(end - start) / CLOCKS_PER_SEC);
+    printf("Time Required: %lf seconds\n", (double)(end - start) / CLOCKS_PER_SEC / 10); // Average time
 
     // Selection Sort
     copyArray(original, arr, n);
     start = clock();
-    selectionSort(arr, n);
+    for (int i = 0; i < 10; i++) // Repeat to amplify time
+        selectionSort(arr, n);
     end = clock();
     printf("\nSelection Sort:\n");
-    printArray(arr, n);
-    printf("Time Required: %lf seconds\n", (double)(end - start) / CLOCKS_PER_SEC);
+    printf("Time Required: %lf seconds\n", (double)(end - start) / CLOCKS_PER_SEC / 10); // Average time
 
     return 0;
 }
