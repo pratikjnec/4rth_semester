@@ -1,6 +1,9 @@
 #include <stdio.h> 
+#include <time.h>
+clock_t start, end;
 void selectionSort(int arr[], int n) 
 { 
+    start = clock();
     int i, j, min_idx; 
   
     for (i = 0; i < n-1; i++) 
@@ -14,6 +17,7 @@ void selectionSort(int arr[], int n)
         arr[min_idx] = arr[i]; 
         arr[i] = temp; 
     } 
+    end = clock();
 } 
 int main() 
 { 
@@ -32,5 +36,8 @@ int main()
     for (int i=0; i < n; i++) 
         printf("%d ", arr[i]); 
     printf("\n"); 
+    
+    printf("Time Required: %lf miliseconds\n", (double)(end));
+
     return 0; 
 } 

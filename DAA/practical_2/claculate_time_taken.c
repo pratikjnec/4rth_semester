@@ -62,7 +62,6 @@ int main() {
     int arr[n];
     
     clock_t start, end;
-
     // Insertion Sort
     copyArray(original, arr, n);
     start = clock();
