@@ -1,0 +1,24 @@
+Design Analysis and Algorithm
+aim 
+hand run
+algorithm
+time complexity
+program 
+output
+
+python CSE21VSP253
+practical 1;
+character occurance
+current date and time
+birthday date
+
+practical 2:
+matrix arithmetic operation
+
+Title
+Aim
+Theory
+Requirements
+Code
+Output
+Conclusion
